@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="w-full">
+    <header className="w-full fixed top-0">
       <nav className="flex w-full bg-gray-800 text-white font-bold p-4">
       {NAV_ITEMS.map(({ label, url }) => (
         <Link
