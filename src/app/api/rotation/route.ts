@@ -2,7 +2,6 @@ import { PATH } from "@/constants/path";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  console.log(process.env.RIOT_API_KEY);
   try {
     const res = await fetch(PATH.ROTATION_URL, {
       method: "GET",
