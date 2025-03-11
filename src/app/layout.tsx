@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Providers from "@/providers/ReactQueryProvider";
 
 const geistSans = localFont({
   src: "../public/fonts/GeistVF.woff",
@@ -31,8 +32,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased py-[100px] flex justify-center bg-black`}
       >
         <Header />
-        {children}
-        <Footer/>
+        <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );
