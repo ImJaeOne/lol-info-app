@@ -1,4 +1,4 @@
-import ChampionCard from "@/components/home/ChampionCard";
+import ChampionCard from "@/components/champion/ChampionCard";
 import { getChampionList } from "@/services/championService";
 
 const ChampionPage = async () => {
