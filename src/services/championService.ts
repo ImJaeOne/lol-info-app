@@ -27,7 +27,9 @@ export const getChampionDetail = async (id: string) => {
     }
   );
 
-  const { data }: { data: Record<string, ChampionDetail> } = await res.json();
+  const { data: championDetailObj } = await res.json();
+
+  const data: ChampionDetail = championDetailObj[id];
 
   return { data, version };
 };
