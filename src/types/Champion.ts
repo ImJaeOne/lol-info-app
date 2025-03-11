@@ -3,10 +3,10 @@ export type Champion = {
   format: string;
   version: string;
   // Record는 객체 타입의 키와 값을 정의 할 때 사용하는 유틸리티 타입
-  data: Record<string, ChampionDetail>;
+  data: Record<string, ChampionsDetail>;
 };
 
-export type ChampionDetail = {
+export type ChampionsDetail = {
   version: string;
   id: string;
   key: string;
@@ -18,6 +18,26 @@ export type ChampionDetail = {
   tags: string[];
   partype: string;
   stats: ChampionStats;
+};
+
+export type ChampionDetail = {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  image: {
+    full: string;
+  };
+  lore: string;
+  info: ChampionInfo;
+  spells: ChampionSpells[];
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string;
+    };
+  };
 };
 
 export type ChampionInfo = {
@@ -58,4 +78,10 @@ export type ChampionImage = {
   y: number;
   w: number;
   h: number;
+};
+
+export type ChampionSpells = {
+  id: string;
+  name: string;
+  description: string;
 };
