@@ -1,27 +1,16 @@
-import { PATH } from "@/constants/path";
+import ChampionCard from "@/components/home/ChampionCard";
 import { getChampionList } from "@/services/championService";
-import Image from "next/image";
 
 const ChampionPage = async () => {
   const { data: championList, version } = await getChampionList();
   const championListArr = Object.entries(championList);
 
   return (
-    <main className="w-[80%]">
+    <main className="w-[90%]">
       <h1>챔피언 목록</h1>
-      <div className="grid grid-cols-4 gap-4">
-        {championListArr?.map(([key, info]) => (
-          <div key={key} className="bg-white flex flex-col ">
-            <Image
-              src={`${PATH.DDRAGON_URL}/cdn/${version}/img/champion/${info.image.full}`}
-              width={50}
-              height={50}
-              alt={key}
-              priority
-            />
-            <span>{info.name}</span>
-            <span>{info.title}</span>
-          </div>
+      <div className="flex flex-wrap gap-4 justify-between">
+        {championListArr?.map(([key, detail]) => (
+          <ChampionCard key={key} detail={detail} version={version} />
         ))}
       </div>
     </main>
