@@ -1,9 +1,10 @@
 import { NAV_ITEMS } from "@/constants/navItems";
 import Link from "next/link";
 
-const Nav = () => {
+const Header = () => {
   return (
-    <nav className="flex w-full bg-gray-800 text-white font-bold p-4">
+    <header className="w-full">
+      <nav className="flex w-full bg-gray-800 text-white font-bold p-4">
       {NAV_ITEMS.map(({ label, url }) => (
         <Link
           key={url}
@@ -14,7 +15,8 @@ const Nav = () => {
         </Link>
       ))}
     </nav>
+    </header>
   );
 };
 
-export default Nav;
+export default Header;
