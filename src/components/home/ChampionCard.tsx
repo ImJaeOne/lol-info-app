@@ -1,17 +1,21 @@
 import { PATH } from "@/constants/path";
-import { ChampionDetail } from "@/types/Champion";
+import { ChampionsDetail } from "@/types/Champion";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ChampionCard = ({
   detail,
   version,
 }: {
-  detail: ChampionDetail;
+  detail: ChampionsDetail;
   version: string;
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center p-4 border border-white bg-black w-[180px] h-[180px] rounded-md">
+    <Link
+      href={`/champions/${detail.id}`}
+      className="flex flex-col items-center justify-center p-4 border border-white bg-black w-[180px] h-[180px] rounded-md"
+    >
       <Image
         src={`${PATH.DDRAGON_URL}/cdn/${version}/img/champion/${detail.image.full}`}
         width={80}
@@ -19,9 +23,9 @@ const ChampionCard = ({
         alt={detail.name}
         priority
       />
-      <span className='text-red-600'>{detail.name}</span>
-      <span className='text-gray-400'>{detail.title}</span>
-    </div>
+      <span className="text-red-600">{detail.name}</span>
+      <span className="text-gray-400">{detail.title}</span>
+    </Link>
   );
 };
 
