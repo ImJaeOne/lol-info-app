@@ -35,20 +35,12 @@ export const getChampionDetail = async (id: string) => {
 };
 
 export const getChampionRotation = async () => {
-  console.log("getChampionRotation 실행");
-  try {
-    const res = await fetch("/api/rotation");
-    console.log("getChampionRotation 완료");
+  const res = await fetch(`${PATH.BASE_URL}/api/rotation`);
 
-    if (!res.ok) {
-      console.log("prefetch 실패");
-      throw new Error("챔피언 로테이션을 받아오는데 실패하였습니다.");
-    }
-    const data = await res.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.log(error);
+  if (!res.ok) {
+    console.log("prefetch 실패");
+    throw new Error("챔피언 로테이션을 받아오는데 실패하였습니다.");
   }
-  // const res = await fetch("http://localhost:3000/api/rotation");
+  const data = await res.json();
+  return data;
 };

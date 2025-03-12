@@ -2,7 +2,7 @@ import ChampionCard from "@/components/champion/ChampionCard";
 import { getChampionList } from "@/services/championService";
 
 const ChampionPage = async () => {
-  const championList  = await getChampionList();
+  const championList = await getChampionList();
   const championListArr = Object.entries(championList);
 
   return (

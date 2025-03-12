@@ -15,10 +15,7 @@ const RotationPage = async () => {
 
   await queryClient.prefetchQuery({
     queryKey: [QUERY_KEY.ROTATIONKEYLIST],
-    queryFn: async () => {
-      console.log("rotation prefetch");
-      return await getChampionRotation();
-    },
+    queryFn: () => getChampionRotation(),
   });
 
   await queryClient.prefetchQuery({
@@ -28,7 +25,12 @@ const RotationPage = async () => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div>{/* <RotationChampionList /> */}</div>
+      <div className="w-[90%]">
+        <h1 className="text-red-600 text-4xl mb-4">
+          무료로 플레이할 수 있는 챔피언 20
+        </h1>
+        <RotationChampionList />
+      </div>
     </HydrationBoundary>
   );
 };
