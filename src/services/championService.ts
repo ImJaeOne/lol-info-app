@@ -15,7 +15,7 @@ export const getChampionList = async () => {
 
   const { data }: { data: ChampionsDetail[] } = await res.json();
 
-  return { data, version };
+  return data;
 };
 
 export const getChampionDetail = async (id: string) => {
@@ -31,7 +31,7 @@ export const getChampionDetail = async (id: string) => {
 
   const data: ChampionDetail = championDetailObj[id];
 
-  return { data, version };
+  return data;
 };
 
 export const getChampionRotation = async () => {
