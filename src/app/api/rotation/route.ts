@@ -1,4 +1,5 @@
 import { PATH } from "@/constants/path";
+import { error } from "console";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -21,9 +22,6 @@ export async function GET() {
 
     return NextResponse.json(freeChampionIds);
   } catch (error) {
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
