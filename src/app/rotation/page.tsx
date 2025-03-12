@@ -1,33 +1,35 @@
-"use client";
-
-import ChampionCard from "@/components/champion/ChampionCard";
+import RotationChampionList from "@/components/champion/RotationChampionList";
+import { QUERY_KEY } from "@/constants/queryKey";
 import {
-  useChampionListQuery,
-  useRotationChampionListQuery,
-} from "@/hooks/queries/useChampionQuery";
-import { ChampionsDetail } from "@/types/Champion";
-import React from "react";
+  getChampionList,
+  getChampionRotation,
+} from "@/services/championService";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 
-const RotationPage = () => {
-  const { data: rotationIdx } = useRotationChampionListQuery();
-  const { data: championList } = useChampionListQuery();
+const RotationPage = async () => {
+  const queryClient = new QueryClient();
 
-  const championListArr = championList && Object.entries(championList);
+  await queryClient.prefetchQuery({
+    queryKey: [QUERY_KEY.ROTATIONKEYLIST],
+    queryFn: async () => {
+      console.log("rotation prefetch");
+      return await getChampionRotation();
+    },
+  });
 
-  const rotationChampionList: [string, ChampionsDetail][] = rotationIdx?.map(
-    (key: number) =>
-      championListArr &&
-      championListArr.find((champion) => champion[1].key === String(key))
-  );
+  await queryClient.prefetchQuery({
+    queryKey: [QUERY_KEY.CHAMPIONLIST],
+    queryFn: () => getChampionList(),
+  });
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-4 justify-between">
-        {rotationChampionList?.map(([key, detail]) => (
-          <ChampionCard key={key} detail={detail} />
-        ))}
-      </div>
-    </div>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <div>{/* <RotationChampionList /> */}</div>
+    </HydrationBoundary>
   );
 };
 
