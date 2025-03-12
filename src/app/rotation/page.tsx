@@ -2,23 +2,15 @@
 
 import ChampionCard from "@/components/champion/ChampionCard";
 import {
-  getChampionList,
-  getChampionRotation,
-} from "@/services/championService";
+  useChampionListQuery,
+  useRotationChampionListQuery,
+} from "@/hooks/queries/useChampionQuery";
 import { ChampionsDetail } from "@/types/Champion";
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
 
 const RotationPage = () => {
-  const { data: rotationIdx } = useQuery({
-    queryKey: ["rotation"],
-    queryFn: getChampionRotation,
-  });
-
-  const { data: championList } = useQuery({
-    queryKey: ["championList"],
-    queryFn: getChampionList,
-  });
+  const { data: rotationIdx } = useRotationChampionListQuery();
+  const { data: championList } = useChampionListQuery();
 
   const championListArr = championList && Object.entries(championList);
 
