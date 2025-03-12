@@ -6,10 +6,8 @@ import React from "react";
 
 const ChampionCard = ({
   detail,
-  version,
 }: {
   detail: ChampionsDetail;
-  version: string;
 }) => {
   return (
     <Link
@@ -17,7 +15,7 @@ const ChampionCard = ({
       className="flex flex-col items-center justify-center p-4 border border-white bg-black w-[180px] h-[180px] rounded-md"
     >
       <Image
-        src={`${PATH.DDRAGON_URL}/cdn/${version}/img/champion/${detail.image.full}`}
+        src={`${PATH.DDRAGON_URL}/cdn/${detail.version}/img/champion/${detail.image.full}`}
         width={80}
         height={80}
         alt={detail.name}
