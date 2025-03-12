@@ -17,8 +17,9 @@ export async function GET() {
       );
     }
 
-    const data = await res.json();
-    return NextResponse.json(data);
+    const { freeChampionIds }: { freeChampionIds: number[] } = await res.json();
+
+    return NextResponse.json(freeChampionIds);
   } catch (error) {
     return NextResponse.json(
       { error: "Internal Server Error" },
