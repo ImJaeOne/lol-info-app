@@ -38,7 +38,6 @@ export const getChampionRotation = async () => {
   const res = await fetch(`${PATH.BASE_URL}/api/rotation`);
 
   if (!res.ok) {
-    console.log("prefetch 실패");
     throw new Error("챔피언 로테이션을 받아오는데 실패하였습니다.");
   }
   const data = await res.json();
