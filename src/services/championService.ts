@@ -31,7 +31,7 @@ export const getChampionDetail = async (id: string) => {
 
   const data: ChampionDetail = championDetailObj[id];
 
-  return data;
+  return {version, data};
 };
 
 export const getChampionRotation = async () => {
