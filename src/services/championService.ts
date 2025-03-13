@@ -23,7 +23,7 @@ export const getChampionDetail = async (id: string) => {
   const res = await fetch(
     `${PATH.DDRAGON_URL}/cdn/${version}/data/ko_KR/champion/${id}.json`,
     {
-      cache: "no-cache",
+      cache: "no-store",
     }
   );
 
