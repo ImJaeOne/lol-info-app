@@ -21,9 +21,7 @@ export const generateMetadata = async ({
 const ChampionDetailPage = async ({ params }: Props) => {
   const id = params.id;
   const { data: championDetail, version } = await getChampionDetail(id);
-  return (
-    <ChampionDetail championDetail={championDetail} version={version}/>
-  );
+  return <ChampionDetail championDetail={championDetail} version={version} />;
 };
 
 export default ChampionDetailPage;

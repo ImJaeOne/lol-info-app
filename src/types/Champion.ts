@@ -27,6 +27,8 @@ export type ChampionDetail = {
   title: string;
   image: {
     full: string;
+    sprite: string;
+    group: string;
   };
   lore: string;
   info: ChampionInfo;
@@ -70,18 +72,13 @@ export type ChampionStats = {
   attackspeed: number;
 };
 
-export type ChampionImage = {
-  full: string;
-  sprite: string;
-  group: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-};
-
 export type ChampionSpells = {
   id: string;
   name: string;
   description: string;
+  image: ChampionImage;
+};
+
+export type ChampionImage = {
+  full: string;
 };
