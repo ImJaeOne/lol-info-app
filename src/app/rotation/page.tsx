@@ -26,10 +26,12 @@ const RotationPage = async () => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <div className="w-[90%]">
-        <h1 className="text-red-600 text-4xl mb-4">
-          무료로 플레이할 수 있는 챔피언 20
-        </h1>
-        <RotationChampionList />
+        <div>
+          <h1 className="text-4xl font-extrabold text-red-500 mb-4">
+            무료로 플레이할 수 있는 챔피언 20
+          </h1>
+          <RotationChampionList />
+        </div>
       </div>
     </HydrationBoundary>
   );

@@ -19,7 +19,6 @@ const ChampionCard = ({
         width={80}
         height={80}
         alt={detail.name}
-        priority
       />
       <span className="text-red-600">{detail.name}</span>
       <span className="text-gray-400">{detail.title}</span>

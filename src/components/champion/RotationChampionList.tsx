@@ -5,7 +5,6 @@ import {
   useRotationChampionListQuery,
 } from "@/hooks/queries/useChampionQuery";
 import { ChampionsDetail } from "@/types/Champion";
-import React from "react";
 import ChampionCard from "./ChampionCard";
 
 const RotationChampionList = () => {
