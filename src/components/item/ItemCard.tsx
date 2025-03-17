@@ -17,7 +17,7 @@ const ItemCard = ({
         height={80}
         alt={detail.name}
       />
-      <span className="text-red-600">{detail.name}</span>
+      <span className="text-red-600 line-clamp-1">{detail.name}</span>
       <span className="text-gray-400 w-full text-center line-clamp-2">
         {detail.plaintext}
       </span>
