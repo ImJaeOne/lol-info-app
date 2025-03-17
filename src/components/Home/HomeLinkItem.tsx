@@ -16,10 +16,9 @@ const HomeLinkItem = ({
         <Image
           src={imgSrc}
           alt={altText}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="absolute inset-0"
-          priority
         />
       </div>
       <span className="text-yellow-400">{linkText}</span>

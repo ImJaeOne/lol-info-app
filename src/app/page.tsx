@@ -1,5 +1,5 @@
 import LolChamp from "@/public/assets/league-of-legends-3ggpjbfly8o9uo8a.webp";
-import HomeLinkItem from "@/components/common/LinkBtn";
+import HomeLinkItem from "@/components/Home/HomeLinkItem";
 
 export default function Home() {
   return (
