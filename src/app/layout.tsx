@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Header />
         <Providers>
-          <div className="pt-14 flex items-center justify-center bg-black flex-col w-full h-full">
+          <div className="pt-20 flex items-center justify-center bg-black flex-col w-full h-full">
             {children}
           </div>
         </Providers>
