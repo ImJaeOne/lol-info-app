@@ -1,4 +1,4 @@
-import { getItemList } from "@/services/itemService";
+import { getItemList } from "@/services/server/itemService";
 import ItemCard from "./ItemCard";
 
 const ItemList = async () => {

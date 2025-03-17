@@ -2,13 +2,13 @@
 
 import {
   useChampionListQuery,
-  useRotationChampionListQuery,
+  useRotationChampionListClientQuery,
 } from "@/hooks/queries/useChampionQuery";
 import { ChampionsDetail } from "@/types/Champion";
 import ChampionCard from "./ChampionCard";
 
 const RotationChampionList = () => {
-  const { data: rotationIdx } = useRotationChampionListQuery();
+  const { data: rotationIdx } = useRotationChampionListClientQuery();
   const { data: championList } = useChampionListQuery();
 
   const championListArr = championList && Object.entries(championList);

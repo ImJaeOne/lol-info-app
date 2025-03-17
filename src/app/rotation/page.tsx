@@ -3,7 +3,7 @@ import { QUERY_KEY } from "@/constants/queryKey";
 import {
   getChampionList,
   getChampionRotation,
-} from "@/services/championService";
+} from "@/services/server/championService";
 import {
   dehydrate,
   HydrationBoundary,

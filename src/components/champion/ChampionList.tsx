@@ -1,4 +1,4 @@
-import { getChampionList } from "@/services/championService";
+import { getChampionList } from "@/services/server/championService";
 import ChampionCard from "./ChampionCard";
 
 const ChampionList = async () => {

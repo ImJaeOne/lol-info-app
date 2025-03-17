@@ -1,5 +1,5 @@
 import ChampionDetail from "@/components/champion/ChampionDetail";
-import { getChampionDetail } from "@/services/championService";
+import { getChampionDetail } from "@/services/server/championService";
 import { Metadata } from "next";
 
 type Props = {

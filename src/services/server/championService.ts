@@ -35,12 +35,20 @@ export const getChampionDetail = async (id: string) => {
 };
 
 export const getChampionRotation = async () => {
-  const res = await fetch(`/api/rotation`);
+  try {
+    const res = await fetch(PATH.ROTATION_URL, {
+      method: "GET",
+      headers: {
+        "X-Riot-Token": process.env.RIOT_API_KEY || "",
+      },
+    });
+    if (!res.ok) {
+      throw new Error("챔피언 로테이션을 받아오는데 실패하였습니다.");
+    }
+    const { freeChampionIds }: { freeChampionIds: number[] } = await res.json();
 
-  if (!res.ok) {
+    return freeChampionIds;
+  } catch {
     throw new Error("챔피언 로테이션을 받아오는데 실패하였습니다.");
   }
-  const data = await res.json();
-
-  return data;
 };
