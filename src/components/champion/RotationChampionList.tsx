@@ -19,7 +19,7 @@ const RotationChampionList = () => {
       championListArr.find((champion) => champion[1].key === String(key))
   );
   return (
-    <div className="flex flex-wrap gap-4 justify-between">
+    <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
       {rotationChampionList?.map(([key, detail]) => (
         <ChampionCard key={key} detail={detail} />
       ))}
