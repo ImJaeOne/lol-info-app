@@ -3,29 +3,26 @@
 import { useRouter } from "next/navigation";
 import { startTransition } from "react";
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function Error({ reset }: { reset: () => void }) {
   const { refresh } = useRouter();
 
   return (
-    <div className='text-4xl text-red-800'>
-      <h2>Something went wrong!</h2>
-      <h2>{error.message}</h2>
-      <button
-        onClick={() =>
-          startTransition(() => {
-            refresh();
-            reset();
-          })
-        }
-      >
-        Try again
-      </button>
+    <div className="w-full h-[calc(100vh-56px)] flex justify-center items-center">
+      <div className=" flex flex-col text-3xl text-red-500 p-8 bg-gray-900 rounded-xl shadow-lg border-4 border-red-500">
+        <p className="text-lg text-white mb-6">
+          챔피언 로테이션을 확인할 수 없습니다!
+        </p>
+        <button
+          onClick={() =>
+            startTransition(() => {
+              refresh();
+              reset();
+            })
+          }
+        >
+          Try again
+        </button>
+      </div>
     </div>
   );
 }

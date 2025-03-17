@@ -9,6 +9,8 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const RotationPage = async () => {
   const queryClient = new QueryClient();
@@ -25,12 +27,14 @@ const RotationPage = async () => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="w-[90%]">
+      <div className="w-[90%] mt-6">
         <div>
           <h1 className="text-4xl font-extrabold text-red-500 mb-4">
             무료로 플레이할 수 있는 챔피언 20
           </h1>
-          <RotationChampionList />
+          <Suspense fallback={<Loading />}>
+            <RotationChampionList />
+          </Suspense>
         </div>
       </div>
     </HydrationBoundary>
