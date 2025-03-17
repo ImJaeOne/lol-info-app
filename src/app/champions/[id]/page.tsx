@@ -1,6 +1,8 @@
 import ChampionDetail from "@/components/champion/ChampionDetail";
 import { getChampionDetail } from "@/services/server/championService";
 import { Metadata } from "next";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 type Props = {
   params: {
@@ -21,7 +23,11 @@ export const generateMetadata = async ({
 const ChampionDetailPage = async ({ params }: Props) => {
   const id = params.id;
   const { data: championDetail, version } = await getChampionDetail(id);
-  return <ChampionDetail championDetail={championDetail} version={version} />;
+  return (
+    <Suspense fallback={<Loading/>}>
+      <ChampionDetail championDetail={championDetail} version={version} />
+    </Suspense>
+  );
 };
 
 export default ChampionDetailPage;
