@@ -7,7 +7,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold text-red-500">
         리그 오브 레전드 정보 앱
       </h1>
-      <span className="white">
+      <span className="text-white">
         Riot Games API를 활용하여 챔피언과 아이템 정보를 제공합니다.
       </span>
       <HomeLinkItem

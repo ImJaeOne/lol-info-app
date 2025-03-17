@@ -12,12 +12,11 @@ const HomeLinkItem = ({
       href={href}
       className="flex flex-col items-center justify-center gap-4"
     >
-      <div className="relative w-[400px] h-[250px]">
+      <div className="relative w-[400px]">
         <Image
           src={imgSrc}
           alt={altText}
           style={{ objectFit: "cover" }}
-          className="absolute inset-0"
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
