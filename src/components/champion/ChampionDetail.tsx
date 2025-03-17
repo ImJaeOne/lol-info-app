@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { PATH } from "@/constants/path";
 import { type ChampionDetail } from "@/types/Champion";
 import Image from "next/image";
@@ -9,6 +12,12 @@ const ChampionDetail = ({
   championDetail: ChampionDetail;
   version: string;
 }) => {
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoadComplete = () => {
+    setLoading(false);
+  };
+
   return (
     <div className="relative w-auto h-[calc(100vh-56px)] p-10 flex items-end ">
       <div
@@ -37,6 +46,7 @@ const ChampionDetail = ({
             {championDetail.spells.map((spell) => (
               <li key={spell.name} className="relative group flex ">
                 <Image
+                  onLoad={handleImageLoadComplete}
                   src={`${PATH.DDRAGON_URL}/cdn/${version}/img/spell/${spell.image.full}`}
                   width={48}
                   height={48}
@@ -51,6 +61,12 @@ const ChampionDetail = ({
           </ul>
         </div>
       </div>
+
+      {loading && (
+        <div className="absolute inset-0 bg-black/70 flex justify-center items-center text-white">
+          로딩 중...
+        </div>
+      )}
     </div>
   );
 };

@@ -6,7 +6,7 @@ const ChampionList = async () => {
   const championListArr = Object.entries(championList);
 
   return (
-    <div className="flex flex-wrap gap-4 justify-between">
+    <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
       {championListArr?.map(([key, detail]) => (
         <ChampionCard key={key} detail={detail} />
       ))}
