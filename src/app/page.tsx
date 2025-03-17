@@ -3,7 +3,7 @@ import HomeLinkItem from "@/components/Home/HomeLinkItem";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center gap-4">
+    <main className="flex flex-col items-center justify-center gap-4 mt-6">
       <h1 className="text-3xl font-bold text-red-500">
         리그 오브 레전드 정보 앱
       </h1>
