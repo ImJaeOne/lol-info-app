@@ -71,7 +71,7 @@ return (
   #### [Next.js - React-Query Prefetching(feat.라우트 핸들러...)](https://dlawi0108.tistory.com/77)
 
 - onClick을 통한 error.tsx 렌더링 실패
-- #### [onClick 이벤트 핸들러로 발생시키는 에러는 에러로 못 잡는다고?](https://dlawi0108.tistory.com/78)
+  #### [onClick 이벤트 핸들러로 발생시키는 에러는 에러로 못 잡는다고?](https://dlawi0108.tistory.com/78)
 
 ## 🤔 느낀 점
 
