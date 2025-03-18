@@ -1,7 +1,7 @@
 # LoL Info App
 
 리그오브레전드의 챔피언과 아이템을 확인할 수 있는 웹 애플리케이션입니다.  
-각 페이지에 따라 CSR, SSG, SSR, ISG 방식으로 렌더링됩니다.
+각 페이지에 따라 CSR, SSG, SSR, ISR 방식으로 렌더링됩니다.
 
 ## 🚀 배포 
 ### https://lol-info-app-beta.vercel.app/
